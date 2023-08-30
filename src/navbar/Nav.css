@@ -1,0 +1,28 @@
+*{
+margin: 0%;
+padding: 0%;
+}
+
+.link{
+    background: #FFFFFF;
+    width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  box-shadow: 3px 2px 5px rgb(207, 156, 156);
+  }
+  .link a{
+    /* color: black; */
+    padding: 1rem;
+    text-decoration: none;
+    font: 1.5rem
+  }
+  .profilePic{
+    background-image: url(../assets/Profilepicture.jpeg);
+    width: 70px ;
+    height: 70px;
+    border-radius:50%;
+    margin-left: 15px;
+    background-size: cover;
+  }
