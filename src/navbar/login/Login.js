@@ -52,7 +52,7 @@ export default function Login() {
         {/* <div className="loginbg h-[900px] bg-cover bg-no-repeat"> */}
         <div className="flex flex-col items-center">
           <div className="font-extrabold text-[50px] text-red-400">
-            Welcome!
+            Welcome Back!
           </div>
           <div className="">
             <img src={loginPic} alt="Error 404" />
