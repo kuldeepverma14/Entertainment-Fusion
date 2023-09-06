@@ -8,17 +8,13 @@ import "./Nav.css"
 
   const Head = () => {
     return(
-//   <nav className="bg-gray-400 h-10 flex justify-center align-top ">
-
-  <nav className="grid grid-cols-1">
-    <div className="link">
-    <div className="profilePic">
+  <nav className="link">
+    <div className="profilePic mr-[1420px]">
     </div>
-    <Link className="hover:underline" to="/">Home</Link>
-    <Link className="hover:underline" to="/contact">Contact</Link>
+    <Link className="hover:underline" to="/home">Home</Link>
     <Link className="bg-black text-slate-50 h-3 flex items-center hover:underline " to="/signUp">SignUp</Link>
-    <Link className="hover:underline " to="/login">Login</Link>
-    </div>
+    <Link className="hover:underline " to="/">Login</Link>
+    <Link className="hover:underline" to="/contact">Contact</Link>
   </nav>
     )
 };
@@ -29,10 +25,10 @@ const Navbar = () => {
       <Router>
       <Head />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
         </Routes>
       </Router>
     </div>
