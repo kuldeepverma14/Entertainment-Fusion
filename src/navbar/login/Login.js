@@ -6,28 +6,17 @@ import { AiOutlineMail } from "react-icons/ai";
 import { Si1Password } from "react-icons/si";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { BsEyeFill } from "react-icons/bs";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Login() {
-  // const [formData , setFormData] = useState(
-  //  { email:"",
-  //  password:"",
-  // }
-  // )
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [passwordType, setPasswordType] = useState("password");
-  const [storeValue, setStoreValue] = useState("");
-//   const [formData, setformData] = useState({ email:"",
-//   password:"",
-//  });
+  const [value,setValue] = useState("")
 
-  const changeHandler = (e) => {
-    console.log(e)
-    console.log(e.target)
-    console.log(e.target.value)
-    setStoreValue(e.target.value);
-    // setformData(...formData,{[e.target.name]:e.target.value})
-
-  };
-  console.log(storeValue)
+  const changeHandler=(e)=>{
+    setValue({ [e.target.name]:e.target.value })
+  }
+  console.log(value)
   const togglePassword = () => {
     if (passwordType === "password") {
       setPasswordType("text");
@@ -35,16 +24,19 @@ export default function Login() {
       setPasswordType("password");
     }
   };
- 
+  //   const naviagte =useNavigate()
+  //  const GoForRegiter=()=>{
+  //   naviagte("/signup")
+  //  }
 
- 
-
-//   const handleSubmit = (e)=>{
-//     setFormData(...formData,{[e.target.name]:e.target.value})
-//   }
-//  console.log(formData)
+  const handleSubmit = (value) => {
+    value.preventDefault()
+console.log(value.target)
+    setFormData({ [value.target.name]: value.target.value });
+  };
+  console.log(formData);
   return (
-    <div className="grid grid-cols-2 mt-10">
+    <div className="grid grid-cols-2 mt-5">
       <div className="flex justify-center items-center ">
         <img className="h-[600px] pl-10 " src={loginImage} alt="Error 404" />
       </div>
@@ -60,8 +52,8 @@ export default function Login() {
           <div className="text-[30px] mr-[320px] text-blue-500 mb-4">
             Login Here!{" "}
           </div>
-          {/* <form onSubmit={handleSubmit}> */}
-          <form >
+          <form onSubmit={handleSubmit}>
+          {/* <form> */}
             <div className=" ">
               <span className="mr-[425px] text-blue-500 font-bold">Email</span>
               <div className="flex  border-b h-12">
@@ -94,7 +86,7 @@ export default function Login() {
                 />
                 {/*if button's type is not set then button act as form submission type and it refreshes the page, By setting the type attribute to "button," you ensure that these buttons do not trigger the default form submission behavior, */}
                 <button
-                type="button"
+                  type="button"
                   className="text-blue-500 mt-5 ml-36"
                   onClick={togglePassword}
                 >
@@ -111,21 +103,29 @@ export default function Login() {
               </div>
               <div className="flex  place-content-between mt-4">
                 <div className="">
-                  <button type="button" className="text-blue-500"> Remember me!</button>
+                  <button type="button" className="text-blue-500">
+                    {" "}
+                    Remember me!
+                  </button>
                 </div>
                 <div className="text-blue-500">
-                  <button type="button" >Forgot Password?</button>
+                  <button type="button">Forgot Password?</button>
                 </div>
               </div>
             </div>
-            <div className="flex justify-center pt-5">
+            <div className="flex place-content-between pt-5">
               <button
-                type="submit"
-                
-                className="bg-blue-500 w-[200px] h-10 flex justify-center items-center  "
+                type="submit  "
+                className="bg-blue-500 w-[100px] h-10 flex justify-center items-center  "
+               
               >
-                Submit
+                Login
               </button>
+              <NavLink to="/signup">
+                <button type="button" className="text-blue-500">
+                  Not Registered? Register Here!
+                </button>
+              </NavLink>
             </div>
           </form>
         </div>
