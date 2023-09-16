@@ -38,6 +38,7 @@ console.log(value.target)
   return (
     <div className="grid grid-cols-2 mt-5">
       <div className="flex justify-center items-center ">
+        <p>aditya</p>
         <img className="h-[600px] pl-10 " src={loginImage} alt="Error 404" />
       </div>
       <div className="">
